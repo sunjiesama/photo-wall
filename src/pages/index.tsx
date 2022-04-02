@@ -1,5 +1,5 @@
-import { useRequest } from "ahooks";
-import { getUserList } from "@/apis/user";
+import { useRequest } from 'ahooks';
+import { getUserList } from '@/apis/user';
 
 export default () => {
   const { data, error, loading } = useRequest(getUserList);

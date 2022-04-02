@@ -1,4 +1,4 @@
-import request from "umi-request";
+import request from 'umi-request';
 
 type Data = {
   name: string;
@@ -9,7 +9,7 @@ type Data = {
  * @description
  */
 export async function getUserList() {
-  return request<Result<Data[]>>("/test/user/userList", {
-    method: "GET"
+  return request<Result<Data[]>>('/test/user/userList', {
+    method: 'GET',
   });
 }

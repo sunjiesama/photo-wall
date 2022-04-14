@@ -43,12 +43,13 @@ export default () => {
       form={form}
       className="w-80"
       name="basic"
-      wrapperCol={{ span: 24 }}
+      layout="vertical"
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item
+        label={<span className="text-xl text-white">username</span>}
         name="username"
         rules={[{ required: true, message: 'Please input your username!' }]}
       >
@@ -56,18 +57,17 @@ export default () => {
       </Form.Item>
 
       <Form.Item
+        label={<span className="text-xl text-white">password</span>}
         name="password"
         rules={[{ required: true, message: 'Please input your password!' }]}
       >
         <Input.Password prefix={<LockOutlined />} />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ span: 24 }}>
+      <Form.Item>
         <Space size={'large'}>
-          <Button type="primary" htmlType="submit">
-            登录
-          </Button>
-          <Button type="primary" htmlType="button" onClick={registered}>
+          <Button htmlType="submit">登录</Button>
+          <Button htmlType="button" onClick={registered}>
             注册
           </Button>
         </Space>

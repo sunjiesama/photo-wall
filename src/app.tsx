@@ -6,8 +6,6 @@ export const getInitialState = async (): Promise<{
   const token = Cookies.get('token');
   if (!token) {
     history.replace('/login');
-  } else {
-    history.replace('/');
   }
   return { userInfo: {} };
 };

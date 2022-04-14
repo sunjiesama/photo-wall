@@ -9,11 +9,6 @@ export default defineConfig({
   fastRefresh: {},
   mock: false,
   proxy: {
-    // '/api': {
-    //   target: 'http://124.223.184.103:3000/',
-    //   changeOrigin: true,
-    //   pathRewrite: { '^/api': '' },
-    // },
     '/api': {
       target: 'http://localhost:3000/',
       changeOrigin: true,

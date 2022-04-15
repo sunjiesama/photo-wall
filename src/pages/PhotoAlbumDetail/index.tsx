@@ -32,6 +32,7 @@ export default () => {
 
       if (!isLt1M) {
         message.error('我网络不太好,不能接受超过1M的图片!');
+        return Upload.LIST_IGNORE;
       }
 
       message.error(`${file.name} 格式不正确`);

@@ -6,7 +6,10 @@ const Page404: IRouter = {
 
 const routers: IRouter[] = [
   { path: '/', component: '@/pages/PhotoAlbum/index' },
-  { path: '/detail', component: '@/pages/PhotoAlbumDetail/index' },
+  {
+    path: '/detail/:photoalbumid',
+    component: '@/pages/PhotoAlbumDetail/index',
+  },
   { path: '/login', component: '@/pages/Login/index' },
 ];
 

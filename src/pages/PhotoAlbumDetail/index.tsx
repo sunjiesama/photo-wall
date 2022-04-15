@@ -27,6 +27,13 @@ export default () => {
       if (['image/png', 'image/jpeg'].includes(file.type)) {
         return true;
       }
+
+      const isLt1M = file.size / 1024 / 1024 < 1;
+
+      if (!isLt1M) {
+        message.error('我网络不太好,不能接受超过1M的图片!');
+      }
+
       message.error(`${file.name} 格式不正确`);
       return Upload.LIST_IGNORE;
     },

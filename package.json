@@ -22,7 +22,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-layout": "^6.5.0",
-    "ahooks": "^3.0.0-alpha.18",
     "antd": "^4.19.5",
     "js-cookie": "^3.0.1",
     "react": "17.x",

@@ -9,7 +9,6 @@ specifiers:
   '@types/react-dom': ^17.0.0
   '@umijs/preset-react': 1.x
   '@umijs/test': ^3.5.21
-  ahooks: ^3.0.0-alpha.18
   antd: ^4.19.5
   js-cookie: ^3.0.1
   lint-staged: ^10.0.7
@@ -25,7 +24,6 @@ specifiers:
 dependencies:
   '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
   '@ant-design/pro-layout': 6.34.8_9c0de265bc3f25e6004b7ce7608693c1
-  ahooks: 3.0.0-alpha.18_react@17.0.2
   antd: 4.19.5_react-dom@17.0.2+react@17.0.2
   js-cookie: 3.0.1
   react: 17.0.2
@@ -1686,21 +1684,6 @@ packages:
       clean-stack: 2.2.0
       indent-string: 4.0.0
     dev: true
-
-  /ahooks/3.0.0-alpha.18_react@17.0.2:
-    resolution: {integrity: sha512-d7Pk3SDCaQ5u2LinchpVuLMDtXU0JW0EdGdWZXRCTyOUXz3IvG+td8Vc3QE3165ryaATxBuF4ytV7RvoXr+iww==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      react: ^16.8.6 || ^17.0
-    dependencies:
-      dayjs: 1.11.0
-      intersection-observer: 0.7.0
-      js-cookie: 3.0.1
-      lodash: 4.17.21
-      react: 17.0.2
-      resize-observer-polyfill: 1.5.1
-      screenfull: 5.2.0
-    dev: false
 
   /ajv-errors/1.0.1_ajv@6.12.6:
     resolution: {integrity: sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==}
@@ -3954,10 +3937,6 @@ packages:
       has: 1.0.3
       side-channel: 1.0.4
     dev: true
-
-  /intersection-observer/0.7.0:
-    resolution: {integrity: sha512-Id0Fij0HsB/vKWGeBe9PxeY45ttRiBmhFyyt/geBdDHBYNctMRTE3dC1U3ujzz3lap+hVXlEcVaB56kZP/eEUg==}
-    dev: false
 
   /intl-format-cache/4.3.1:
     resolution: {integrity: sha512-OEUYNA7D06agqPOYhbTkl0T8HA3QKSuwWh1HiClEnpd9vw7N+3XsQt5iZ0GUEchp5CW1fQk/tary+NsbF3yQ1Q==}
@@ -7747,11 +7726,6 @@ packages:
       '@types/json-schema': 7.0.11
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
-    dev: false
-
-  /screenfull/5.2.0:
-    resolution: {integrity: sha512-9BakfsO2aUQN2K9Fdbj87RJIEZ82Q9IGim7FqM5OsebfoFC6ZHXgDq/KvniuLTPdeM8wY2o6Dj3WQ7KeQCj3cA==}
-    engines: {node: '>=0.10.0'}
     dev: false
 
   /scroll-into-view-if-needed/2.2.29:

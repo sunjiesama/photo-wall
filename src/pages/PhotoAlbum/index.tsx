@@ -19,19 +19,16 @@ export default () => {
     },
     accept: '.jpg,.png',
     beforeUpload: (file: any) => {
+      const isJpgOrPng =
+        file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        message.error('图片类型不正确!');
+      }
       const isLt1M = file.size / 1024 / 1024 < 1;
-
-      if (['image/png', 'image/jpeg'].includes(file.type)) {
-        return true;
-      }
-
       if (!isLt1M) {
-        message.error('我网络不太好,不能接受超过1M的图片!');
-        return Upload.LIST_IGNORE;
+        message.error('我网络不好,接受不了超过1M的照片!');
       }
-
-      message.error(`${file.name} 格式不正确`);
-      return Upload.LIST_IGNORE;
+      return isJpgOrPng && isLt1M;
     },
     onChange(info: any) {
       if (info.file.status === 'done') {

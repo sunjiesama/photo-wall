@@ -60,7 +60,7 @@ export default () => {
   return (
     <div className="flex flex-wrap py-4">
       <div className="w-1/2 h-56 px-1">
-        <div className="flex flex-col items-center justify-center w-full text-gray-500 bg-gray-300 h-44 ">
+        <div className="flex flex-col items-center justify-center w-full overflow-hidden text-gray-500 bg-gray-200 rounded h-44">
           <Upload {...props}>
             <FileImageOutlined className="text-3xl" />
             <p className="pt-4">新建相册</p>
@@ -77,7 +77,7 @@ export default () => {
               history.push(`/detail/${i.photoalbumid}`);
             }}
           >
-            <div className="flex-1 w-full text-gray-500 bg-gray-300 h-44">
+            <div className="flex-1 w-full overflow-hidden text-gray-500 bg-gray-300 rounded h-44">
               <img
                 src={`http://124.223.184.103/${i.url}`}
                 alt=""

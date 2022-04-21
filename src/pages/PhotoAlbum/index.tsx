@@ -24,9 +24,9 @@ export default () => {
       if (!isJpgOrPng) {
         message.error('图片类型不正确!');
       }
-      const isLt1M = file.size / 1024 / 1024 < 1;
+      const isLt1M = file.size / 1024 / 1024 < 10;
       if (!isLt1M) {
-        message.error('我网络不好,接受不了超过1M的照片!');
+        message.error('图片太大了,不能超过10M');
       }
       return isJpgOrPng && isLt1M;
     },
@@ -90,7 +90,7 @@ export default () => {
             <div className="h-10">
               <p className="my-1 font-semibold">记录</p>
               <p className="mb-0 text-xs">
-                <span>152张</span> <span>私密</span>
+                <span>{i.count}张</span> <span>私密</span>
               </p>
             </div>
           </div>

@@ -3,7 +3,8 @@ import * as webApi from '@/apis/photo';
 import useGetQuery from '@/utils/useGetQuery';
 import { message, Upload } from 'antd';
 import { FileImageOutlined } from '@ant-design/icons';
-
+import { createPortal } from 'react-dom';
+import Portal from '@/pages/components/Portal';
 const BASE_IMG_URL = 'http://124.223.184.103/';
 
 export default () => {
@@ -27,11 +28,11 @@ export default () => {
       if (!isJpgOrPng) {
         message.error('图片类型不正确!');
       }
-      const isLt1M = file.size / 1024 / 1024 < 1;
-      if (!isLt1M) {
-        message.error('我网络不好,接受不了超过1M的照片!');
-      }
-      return isJpgOrPng && isLt1M;
+      // const isLt1M = file.size / 1024 / 1024 < 1;
+      // if (!isLt1M) {
+      //   message.error('我网络不好,接受不了超过1M的照片!');
+      // }
+      return isJpgOrPng;
     },
     onChange(info: any) {
       if (info.file.status === 'done') {
@@ -54,7 +55,8 @@ export default () => {
   };
 
   const [data, setData] = useState<webApi.PhotoList[]>();
-
+  const [visible, setVisible] = useState(false);
+  const [url, setUrl] = useState('');
   useEffect(() => {
     webApi.getPhotoList({ photoalbumid }).then((res) => {
       if (res.code === '200') {
@@ -78,6 +80,10 @@ export default () => {
                         src={BASE_IMG_URL + i.url}
                         alt=""
                         className="object-cover w-full h-full rounded"
+                        onClick={() => {
+                          setVisible(true);
+                          setUrl(BASE_IMG_URL + i.url);
+                        }}
                       />
                     </div>
                   </React.Fragment>
@@ -87,6 +93,7 @@ export default () => {
           </div>
         );
       })}
+
       <div className="w-1/2 h-56 px-1">
         <div className="flex flex-col items-center justify-center w-full overflow-hidden text-gray-300 bg-gray-200 rounded h-44">
           <Upload {...props}>
@@ -94,6 +101,18 @@ export default () => {
             <p className="pt-4">上传照片</p>
           </Upload>
         </div>
+      </div>
+      <div>
+        {createPortal(
+          <Portal
+            url={url}
+            visible={visible}
+            closePortal={() => {
+              setVisible(false);
+            }}
+          />,
+          document.body,
+        )}
       </div>
     </>
   );

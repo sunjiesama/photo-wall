@@ -20,6 +20,7 @@ export type AlbumItem = {
   id: number;
   photoalbumid: string;
   url: string;
+  count: number;
 };
 
 /**
